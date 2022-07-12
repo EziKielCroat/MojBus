@@ -1,6 +1,7 @@
 let put = document.getElementById("putBtn");
 let valueChanged = false;
 
+
     require([
         "esri/config",
         "esri/Map",
