@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta charset="utf-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="styles.css">
     <title>MojGIS</title>
     <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.24/"></script>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -23,13 +23,14 @@
     <nav class="nav" id="nav">
       <ul>
         <li id="putBtn"><a href="#">Putevi</a></li>
-        <li><a href="#">Mjesta</a></li>
+        <li id="mjestoBtn"><a href="#">Mjesta</a></li>
         <li><a href="#">Busevi</a></li>
         <li><a href="https://github.com/EziKielCroat/MojGIS">Github</a></li>
       </ul>
     </nav> 
 </div>
   <div class="menu-bg" id="menu-bg"></div>
+    <div id="map2" style="display: none; "></div>
     <div id="map"></div>
     <script src="utils.js"></script>
     <script src="client.js"></script>
