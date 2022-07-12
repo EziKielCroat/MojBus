@@ -24,13 +24,24 @@ let valueChanged = false;
         zoom: 12,
       });
 
-        document.getElementById("putBtn").addEventListener("click", function() {
-            putHandlerTester();
+        put.addEventListener("click", function() {
+            valueChanged = true;
+            setTimeout(function(){
+             valueChanged = false;
+             confirm("Odaberite početak i destinaciju");
+          }, 1000);
+            putBtnHandler(valueChanged);
             menuOnClick();
+        });
+
+        document.getElementById("mjestoBtn").addEventListener("click", function() {
+          mjestoBtnHolder();
+          menuOnClick();
         });
     });
 
 
+    // Helper
     function menuOnClick() {
       document.getElementById("menu-bar").classList.toggle("change");
       document.getElementById("nav").classList.toggle("change");
