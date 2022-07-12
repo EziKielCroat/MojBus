@@ -11,7 +11,7 @@ let valueChanged = false;
         "esri/rest/support/FeatureSet"
       ], function(esriConfig, Map, MapView, Graphic, route, RouteParameters, FeatureSet) {
   
-      esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
+      esriConfig.apiKey = "YOUR-API-KEY"; // Replace this
   
       const map = new Map({
         basemap: "arcgis-navigation"
@@ -29,7 +29,7 @@ let valueChanged = false;
             setTimeout(function(){
              valueChanged = false;
              confirm("Odaberite početak i destinaciju");
-          }, 1000);
+          }, 1250);
             putBtnHandler(valueChanged);
             menuOnClick();
         });
@@ -40,8 +40,6 @@ let valueChanged = false;
         });
     });
 
-
-    // Helper
     function menuOnClick() {
       document.getElementById("menu-bar").classList.toggle("change");
       document.getElementById("nav").classList.toggle("change");
