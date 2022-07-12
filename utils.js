@@ -15,9 +15,9 @@ if(value == true) {
             zoom: 12,
           });
 
-          esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
+          esriConfig.apiKey = "YOUR-API-KEY";
 
-          const routeUrl = "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
+          const routeUrl = "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World"; // Make sure your API key is in scope with Routing else this will throw errors.
     
           view.on("click", function(event) {
             if (view.graphics.length === 0) {
@@ -82,7 +82,7 @@ if(value == true) {
 
                   document.getElementById("menu-bar").addEventListener("click", function() {
                     if(view.graphics.length == 3) {
-                        view.graphics.removeAll();
+                        view.graphics.removeAll(); // Reloading logic
                         view.ui.empty("top-right");
                         document.getElementById("menu").style.display = "none";
                         location.reload();
@@ -116,11 +116,11 @@ function mjestoBtnHolder() {
       const view = new MapView({
           container: "map",
           map: map,
-          center: [16.465, 43.51],
+          center: [16.465, 43.51],// X, Y
           zoom: 12
         });
 
-      esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
+      esriConfig.apiKey = "YOUR-API-KEY";
     
         const search = new Search({
             view: view,
@@ -131,7 +131,7 @@ function mjestoBtnHolder() {
           document.getElementById("menu-bar").addEventListener("click", function() {
             let finder = view.ui.find("finder")
             if (typeof finder === 'object' &&!Array.isArray(finder) && finder !== null) {
-                view.ui.remove(search);
+                view.ui.remove(search); // Reloading logic
                 view.graphics.removeAll();
                 view.ui.empty("top-right");
                 document.getElementById("menu").style.display = "none";
