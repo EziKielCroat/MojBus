@@ -1,18 +1,9 @@
 
 
-function putHandlerTester() {
-        require([
-            "esri/config",
-            "esri/Map",
-            "esri/views/MapView",
-            "esri/Graphic",
-            "esri/rest/route",
-            "esri/rest/support/RouteParameters",
-            "esri/rest/support/FeatureSet"
-          ], function(esriConfig, Map, MapView, Graphic, route, RouteParameters, FeatureSet) {
-      
-          esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
-      
+function putBtnHandler(value) {
+if(value == true) {
+      require(["esri/config","esri/Map","esri/views/MapView","esri/Graphic","esri/rest/route","esri/rest/support/RouteParameters","esri/rest/support/FeatureSet"], function(esriConfig, Map, MapView, Graphic, route, RouteParameters, FeatureSet) {
+
           const map = new Map({
             basemap: "arcgis-navigation"
           });
@@ -23,7 +14,9 @@ function putHandlerTester() {
             center: [16.465, 43.51], // X, Y
             zoom: 12,
           });
-    
+
+          esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
+
           const routeUrl = "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
     
           view.on("click", function(event) {
@@ -49,8 +42,6 @@ function putHandlerTester() {
               view.graphics.add(graphic);
             }
 
-
-            
             function getRoute() {
               const routeParams = new RouteParameters({
                 stops: new FeatureSet({
@@ -81,9 +72,8 @@ function putHandlerTester() {
             
                    features.forEach(function(result,i){
                      const direction = document.createElement("li");
-                     let km = result.attributes.length.toFixed(2) * 1.60 // pretvaranje miles into km
-                     console.log(km);
-                     direction.innerHTML = result.attributes.text + " (" + km.toFixed(2) + " kilometara)"; // change to meters?
+                     let m = result.attributes.length.toFixed(2) * 1609 
+                     direction.innerHTML = result.attributes.text + " (" + m.toFixed(0) + " metara)"; 
                      directions.appendChild(direction);
                    });
             
@@ -93,29 +83,62 @@ function putHandlerTester() {
                   document.getElementById("menu-bar").addEventListener("click", function() {
                     if(view.graphics.length == 3) {
                         view.graphics.removeAll();
-                        view.ui.remove(directions);
-                        menuOnClick();
-                        menuOnClick();
-                        window.stop();
-                  } 
+                        view.ui.empty("top-right");
+                        document.getElementById("menu").style.display = "none";
+                        location.reload();
+                      } 
+
                 })
-    
-            
                  }
-            
                 })  
-            
                 .catch(function(error){
                     console.log(error);
                 })  
             }
-            return undefined;
           })
       })
+    } else {
+      alert("Error 001")
     }
+}
 
-    function menuOnClick() {
-        document.getElementById("menu-bar").classList.toggle("change");
-        document.getElementById("nav").classList.toggle("change");
-        document.getElementById("menu-bg").classList.toggle("change-bg");
-    }
+function mjestoBtnHolder() {
+    require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Search"
+      ], function(esriConfig,Map, MapView, Search) {
+      const map = new Map({
+          basemap: "arcgis-navigation"
+        });
+    
+      const view = new MapView({
+          container: "map",
+          map: map,
+          center: [16.465, 43.51],
+          zoom: 12
+        });
+
+      esriConfig.apiKey = "AAPK212275a161804b0099e037c6a1784b06LDUTjLaXmcySkwIYjxewuk6diGTWo5sQt_3JfgR31U2vcqEFR_VQsniBaeDaOmqG";
+    
+        const search = new Search({
+            view: view,
+            id: "finder"
+          });
+          view.ui.empty("top-right");
+          view.ui.add(search, "top-right"); 
+          document.getElementById("menu-bar").addEventListener("click", function() {
+            let finder = view.ui.find("finder")
+            if (typeof finder === 'object' &&!Array.isArray(finder) && finder !== null) {
+                view.ui.remove(search);
+                view.graphics.removeAll();
+                view.ui.empty("top-right");
+                document.getElementById("menu").style.display = "none";
+                location.reload();
+            }
+        });
+      });
+  
+
+}
