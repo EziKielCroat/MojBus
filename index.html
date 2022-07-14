@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>MojGIS</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="utf-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>MojGIS</title>
     <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.24/"></script>
     <link rel="stylesheet" href="styles.css">
@@ -22,15 +22,53 @@
     </div>
     <nav class="nav" id="nav">
       <ul>
-        <li id="putBtn"><a href="#">Putevi</a></li>
-        <li id="mjestoBtn"><a href="#">Mjesta</a></li>
-        <li><a href="#">Busevi</a></li>
+        <li id="put-btn"><a href="#">Putevi</a></li>
+        <li id="mjesto-btn"><a href="#">Mjesta</a></li>
+        <li id="bus-btn"><a href="#">Busevi</a></li>
         <li><a href="https://github.com/EziKielCroat/MojGIS">Github</a></li>
       </ul>
     </nav> 
 </div>
+
+<div id="bus-box" class="bus-box">
+  <select name="bus" id="bus-select" class="bus-select">
+      <option></option>
+      <option name="3 BRDA - LOVRINAC" value="3-brda-lovrinac">3 BRDA - LOVRINAC</option>
+      <option name="3 LOVRINAC - BRDA" value="3-lovrinac-brda">3 LOVRINAC - BRDA</option>
+      <option name="6 KILA - VUKOVARSKA - HNK - KILA" value="6-kila-vukovarska-hnk-kila">6 KILA - VUKOVARSKA - HNK - KILA</option>
+      <option name="7 ŽNJAN - SPINUT - ZAPADNA OBALA" value="7-znjan-spinut-zapadna">7 ŽNJAN - SPINUT - ZAPADNA OBALA</option>
+      <option name="7 ZAPADNA OBALA -  SPINUT - ŽNJAN" value="7-zapadna-spinut-znjan">7 ZAPADNA OBALA -  SPINUT - ŽNJAN</option>
+      <option name="8 ŽNJAN - ZVONČAC" value="8-znjan-zvoncac">8 ŽNJAN - ZVONČAC</option>
+      <option name="8 ZVONČAC - ŽNJAN" value="8-zvoncac-znjan">8 ZVONČAC - ŽNJAN</option>
+      <option name="9 RAVNE NJIVE - TR.LUKA - RAVNE NJIVE" value="9-ravne-luka-ravne">9 RAVNE NJIVE - TR.LUKA - RAVNE NJIVE</option>
+      <option name="11 SPINUT-KAMPUS-PUJANKE-RAVNE NJIVE" value="11-spinut-kampus-pujanke-ravne">11 SPINUT-KAMPUS-PUJANKE-RAVNE NJIVE</option>
+      <option name="11 RAVNE NJIVE-PUJANKE-KAMPUS-SPINUT" value="11-ravne-pujanke-kampus-spinut">11 RAVNE NJIVE-PUJANKE-KAMPUS-SPINUT</option>
+      <option name="12 SV. FRANE - BENE" value="12-frane-bene">12 SV. FRANE - BENE</option>
+      <option name="12 BENE - SV.FRANE" value="12-bene-frane">12 BENE - SV.FRANE</option>
+      <option name="14 BRDA - KOPILICA - DUBROVAČKA - BOLNICE - ŽNJAN - DUILOVO" value="14-brda-kopilica-dubrovacka-bolnice-znjan-duilovo">14 BRDA - KOPILICA - DUBROVAČKA - BOLNICE - ŽNJAN - DUILOVO</option>
+      <option name="14 DUILOVO - ŽNJAN - BOLNICE - DUBROVAČKA - KOPILICA - BRDA" value="14-duilovo-znjan-bolnice-dubrovacka-kopilica-brda">14 DUILOVO - ŽNJAN - BOLNICE - DUBROVAČKA - KOPILICA - BRDA</option>
+      <option name="15 DUILOVO - ŽNJAN - TR. LUKA - DUILOVO" value="15-duilovo-znjan-luka-duilovo">15 DUILOVO - ŽNJAN - TR. LUKA - DUILOVO</option>
+      <option name="17 SPINUT - LORA - KAMPUS - TRSTENIK" value="17-spinut-lora-kampus-trstenik">17 SPINUT - LORA - KAMPUS - TRSTENIK</option>
+      <option name="17 TRSTENIK - KAMPUS - LORA - SPINUT" value="17-trstenik-kampus-lora-spinut">17 TRSTENIK - KAMPUS - LORA - SPINUT</option>
+      <option name="18 BRNIK - HNK - BRNIK" value="18-brnik-hnk-brnik">18 BRNIK - HNK - BRNIK</option>
+      <option name="20 RAVNE NJIVE - ZVONČAC" value="20-ravne-zvoncac">20 RAVNE NJIVE - ZVONČAC</option>
+      <option name="21 SV.FRANE - MEJE - SV.FRANE" value="21-frane-meje-frane">21 SV.FRANE - MEJE - SV.FRANE</option>
+      <option name="24 SPLIT - POLJIČKA - TTTS" value="24-split-poljicka-ttts">24 SPLIT - POLJIČKA - TTTS</option>
+      <option name="24 TTTS -POLJIČKA - SPLIT" value="24-ttts-poljicka-split">24 TTTS -POLJIČKA - SPLIT</option>
+      <option name="25 SPLIT - STOBREČ" value="25-split-stobrec">25 SPLIT - STOBREČ</option>
+      <option name="25 STOBREČ - SPLIT" value="25-stobrec-split">25 STOBREČ - SPLIT</option>
+      <option name="26 SPLIT - KAMEN" value="26-split-kamen">26 SPLIT - KAMEN</option>
+      <option name="26 KAMEN - SPLIT" value="26-kamen-split">26 KAMEN - SPLIT</option>
+      <option name="27 SPLIT - KOREŠNICA - ŽRNOVNICA" value="27-split-koresnica-zrnovnica">27 SPLIT - KOREŠNICA - ŽRNOVNICA</option>
+      <option name="27 ŽRNOVNICA - KOREŠNICA - SPLIT" value="27-zrnovnica-koresnica-split">27 ŽRNOVNICA - KOREŠNICA - SPLIT</option>
+      <option name="39 LORA - POLJIČKA - TTTS - LORA" value="39-lora-poljicka-ttts-lora">39 LORA - POLJIČKA - TTTS - LORA</option>
+      <option name="40 TRAJ. LUKA - KILA - TRAJ. LUKA" value="40-luka-kila-luka">40 TRAJ. LUKA - KILA - TRAJ. LUKA</option>
+  </select>
+  <button type="submit" id="submit">Predaj</button>
+  <p>* Trenutačno su samo podržani linije unutar grada splita.</p>
+</div>
+
   <div class="menu-bg" id="menu-bg"></div>
-    <div id="map2" style="display: none; "></div>
     <div id="map"></div>
     <script src="utils.js"></script>
     <script src="client.js"></script>

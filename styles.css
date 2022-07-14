@@ -1,17 +1,12 @@
 html,
 body,
-#map,
-#map2 {
+#map{
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
   color: black;
-
-}
-
-#map2 {
-  display: none;
+  position: relative;
 }
 
 #menu {
@@ -113,11 +108,61 @@ body,
     transform: translate(-60%,-30%);
   }
 
+  .bus-box {
+    height: 140px;
+    width: 480px;
+    display: none;
+    background-color: white;
+    -webkit-box-shadow: 6px 6px 4px lightgrey;
+    -moz-box-shadow: 6px 6px 4px lightgrey;
+    box-shadow: 6px 6px 4px lightgrey;
+
+    border: green;
+    border-radius: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 9;
+  }
+
+  .bus-box select {
+  }
+
+  .bus-select {
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: whitesmoke;
+    border: 1px solid;
+    border-color: lightgray;
+    border-radius: 10px 10px;
+  }
+
+  .bus-box button[id="submit"]{
+    height: 29px;
+    width: 65px;
+    margin-top: 5px;
+    margin-left: 17px;
+    display: block;
+
+    background-color: whitesmoke;
+    border: 1px solid;
+    border-color: lightgray;
+    border-radius: 10px 10px;
+  }
+
+  .bus-box p {
+    margin-left: 15px;
+    margin-top: 38px;
+    font-size: small;
+  }
+
   .esri-ui-top-left {
     margin-top: 50px;
     margin-left: 6px;
   }
-
 
   .esri-ui-top-right ol{
     resize: vertical;
