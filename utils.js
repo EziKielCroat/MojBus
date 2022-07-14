@@ -3,7 +3,6 @@
 function putBtnHandler(value) {
   if(value == true) {
         require(["esri/config","esri/Map","esri/views/MapView","esri/Graphic","esri/rest/route","esri/rest/support/RouteParameters","esri/rest/support/FeatureSet"], function(esriConfig, Map, MapView, Graphic, route, RouteParameters, FeatureSet) {
-  
             const map = new Map({
               basemap: "arcgis-navigation"
             });
