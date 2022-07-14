@@ -15,7 +15,7 @@ function putBtnHandler(value) {
               zoom: 12,
             });
   
-            esriConfig.apiKey = "AAPKbe5eff22a2a948948d6e3187fdd67d6fKKYW43E8DoLoevr7zIJfInnNZbDIvukXwVWOKALJDtgpR1dInnoheujWTTBv8xSG";
+            esriConfig.apiKey = "YOUR-API-KEY";
   
             const routeUrl = "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World"; // Make sure your API key is in scope with Routing else this will throw errors.
       
@@ -120,7 +120,7 @@ function putBtnHandler(value) {
             zoom: 12
           });
   
-        esriConfig.apiKey = "AAPKbe5eff22a2a948948d6e3187fdd67d6fKKYW43E8DoLoevr7zIJfInnNZbDIvukXwVWOKALJDtgpR1dInnoheujWTTBv8xSG";
+        esriConfig.apiKey = "YOUR-API-KEY";
       
           const search = new Search({
               view: view,
