@@ -94,7 +94,7 @@ Simply, download the repo unpack and get your dev env. ready. After that, you ca
 
 ## Roadmap
 
-- [] Add busevi functionaly
+- [50/50] Add busevi functionaly
 - [] Get better logic with reseting modes
 - [] Look into self-hosting ArcGIS tutorial?
 - [] ↑Look into improving the load time and responsiveness
