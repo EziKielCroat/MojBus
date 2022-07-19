@@ -94,10 +94,10 @@ Simply, download the repo unpack and get your dev env. ready. After that, you ca
 
 ## Roadmap
 
-- [] Add busevi functionaly
-- [] Map out the bus stations for at least 2-3 busses for the start.
+- [X] Add busevi functionaly
+- [X] Map out the bus stations for at least 2-3 busses for the start.
 - [] Possibly add a backend for the bus functionality?
-- [] Get better logic with reseting modes
+- [50/50] Get better logic with reseting modes
 - [] Look into self-hosting ArcGIS tutorial?
 - [] ↑Look into improving the load time and responsiveness
 
