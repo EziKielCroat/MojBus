@@ -12,7 +12,7 @@ document.getElementById("bus-select").value = "";
         "esri/views/MapView"
       ], function(esriConfig, Map, MapView) {
   
-      esriConfig.apiKey = "AAPKbe5eff22a2a948948d6e3187fdd67d6fKKYW43E8DoLoevr7zIJfInnNZbDIvukXwVWOKALJDtgpR1dInnoheujWTTBv8xSG"; // Replace this
+      esriConfig.apiKey = "YOUR-API-KEY"; // Replace this
   
       const map = new Map({
         basemap: "arcgis-navigation"
@@ -23,13 +23,13 @@ document.getElementById("bus-select").value = "";
         map: map,
         center: [16.465, 43.51], // X, Y
         zoom: 12,
-      }); // leave for now, will remove later 
+      }); 
 
         put.addEventListener("click", function() {
             valueChanged = true;
             setTimeout(function(){
              valueChanged = false;
-             confirm("Odaberite početak i destinaciju"); // vjerovatno promjenit u zasebni styled window? // razmislit o ovome napravit
+             confirm("Odaberite početak i destinaciju");
           }, 1250);
             putBtnHandler(valueChanged);
             menuOnClick();
